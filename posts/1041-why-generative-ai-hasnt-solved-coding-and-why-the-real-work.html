@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Why Generative AI Hasn&#x27;t Solved Coding — and Why the Real Work is Just Beginning — Black Snowman</title>
+<meta name="description" content="There is a comforting fantasy floating around the tech world that buttons can simply be clicked to drop flawless software into our laps. We are told that soon, ">
+<link rel="canonical" href="https://blacksnowmans.github.io/blacksnowman/posts/1041-why-generative-ai-hasnt-solved-coding-and-why-the-real-work.html">
+<meta property="og:title" content="Why Generative AI Hasn&#x27;t Solved Coding — and Why the Real Work is Just Beginning">
+<meta property="og:description" content="There is a comforting fantasy floating around the tech world that buttons can simply be clicked to drop flawless software into our laps. We are told that soon, ">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://res.cloudinary.com/fcs8sfgj/image/upload/v1791819893/ytblog/post1041_1.png">
+<link rel="stylesheet" href="../style.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4KSJTE78D4"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4KSJTE78D4');</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "06188c1da2ba405db16e0c207160ce15"}'></script>
+</head><body>
+<header class="top"><a class="home" href="../index.html">Black Snowman</a><a class="lang-switch" href="../ko/posts/1041-why-generative-ai-hasnt-solved-coding-and-why-the-real-work.html">한국어</a></header>
+<main class="post">
+  <h1>Why Generative AI Hasn&#x27;t Solved Coding — and Why the Real Work is Just Beginning</h1>
+  <p class="meta"><time datetime="2026-10-13">October 13, 2026</time></p>
+  <p><img src="https://res.cloudinary.com/fcs8sfgj/image/upload/v1791819893/ytblog/post1041_1.png" alt="Why Generative AI Hasn&#x27;t Solved Coding — and Why the Real Work is Just Beginning"></p>
+  <p>There is a comforting fantasy floating around the tech world that buttons can simply be clicked to drop flawless software into our laps. We are told that soon, nobody will need to know how to code; the machines will handle the syntax while humans sit back and admire the output.</p>
+<p>Spend a few minutes in a real software engineering trenches, however, and that rose-colored illusion shatters. Drawing on years of experience as an SRE (Site Reliability Engineer) and deep experimentation with custom AI wrappers, developer Alex Ewerlöf puts it bluntly: <b>"Coding is NOT solved."</b></p>
+<p>In fact, as generative artificial intelligence takes over the tedious typing, the actual weight borne by human developers is becoming heavier, not lighter.</p>
+<h2>The Hidden Costs Lurking Beneath the Surface</h2>
+<p>It is true that generative AI has slashed the initial cost of producing source code. Type out a set of requirements, and features that once took days can now be sketched out in an hour or two. But anyone familiar with the architecture of the software ecosystem knows a hard truth.</p>
+<p>Writing the initial code is merely the tip of a massive iceberg. The real expenses—and the real pain—are locked underwater: maintenance, unexpected outage responses, security patches, and infrastructure optimization to keep systems alive when traffic surges.</p>
+<p>As cloud environments grow more complex, keeping an existing system running smoothly demands vastly more effort and capital than simply generating fresh lines of code. AI makes the visible typing cheap, but <b style="color:#d32f2f;">it does not shrink the monster of long-term maintenance by even a fraction.</b></p>
+<p>When a production server crashes at 3:00 AM, the cold reality hits developers who blindly pasted AI-generated code without understanding it. There is no customer service hotline to call at OpenAI to demand accountability. The human developer sitting in front of the screen is the one who must stay up all night, bow their head, and find the root cause.</p>
+<h2>The Productivity Paradox and Cognitive Load</h2>
+<p>Many expect AI to universally boost work efficiency by double-digit percentages. Yet randomized controlled experiments tell a more complicated story. In a study by research organization METR involving top-tier developers with over five years of open-source experience, participants expected AI to make them 24% faster and subjectively felt they were about 20% faster. In reality, <b style="color:#1976d2;">their actual task completion times were 19% slower.</b></p>
+<p>Tools like Cursor force developers to constantly edit prompts, closely inspect AI-generated code, and reconcile it with existing projects, generating massive cognitive load.</p>
+<p>While tools like GitHub Copilot do show clear boosts in pull request completion for junior developers handling repetitive tasks, this comes with a distinct hazard. Less experienced developers are prone to leaning on plausible-looking code without a deep structural understanding. The exact same tool becomes a razor-sharp weapon for one person and an invisible bottleneck for another.</p>
+<h2>Ownership, Knowledge, and the Ultimate Burden of Responsibility</h2>
+<p>From a legal and operational standpoint, AI cannot be held accountable. It is a tool of execution, but the ultimate human accountability remains absolute. When a server goes down, explaining to management that "the AI wrote this" will save no one's job.</p>
+<p>As Ewerlöf warns: <b>"You cannot be responsible for what you don't understand."</b> Asking an AI chat window to explain a block of code provides a passable summary, but a quick read does not internalize the system's underlying mechanics. Comprehension cannot be outsourced.</p>
+<p>True ownership of a project rests on three clear pillars: <b>Knowledge</b> of how the system works, <b>Mandate</b> to fix and deploy it at will, and <b>Accountability</b> for when things break. In the AI era, many developers are breaking this balance. They retain the mandate, and they carry the accountability when disasters strike, but they outsource the knowledge pillar entirely to a machine.</p>
+<h2>Where to Let Go and Where to Stand Guard</h2>
+<p>This does not mean every line of code requires agonizing microscopic scrutiny. There are specific domains where leaning heavily on AI makes complete sense: personal software projects, exploratory Proof of Concept (PoC) phases, and disposable automation scripts.</p>
+<p>When facing an unfamiliar framework, tossing a prompt at an AI to see if a technical approach is even viable saves hours of reading dense documentation. If it fails, it is tossed out; if it works, the deep study begins.</p>
+<p>However, the rules change entirely in high-stakes domains like healthcare, finance, aviation, defense, and large-scale payment or data migration systems. <b style="color:#d32f2f;">In these categories, a single flawed line of code can ruin a company or cost human lives.</b> Because AI models can quietly weave catastrophic logic flaws into complex business requirements, human code reviews, automated testing, rigorous type checking, and robust CI pipelines must stand as absolute shields.</p>
+<h2>What to Watch Next</h2>
+<p>As the software industry absorbs these shifts, several concrete developments will signal how the balance of power between developers and AI plays out:</p>
+<ul>
+<li><b>The rise of strict internal AI-governance standards:</b> Watch how major tech enterprises begin formalizing policies on what percentage of AI-generated code can be merged without human line-by-line verification.</li>
+<li><b>Tooling focused on architectural safety nets:</b> Expect a surge in developer tools specifically designed to audit AI-generated code for hidden security vulnerabilities and systemic logic gaps, shifting developer value from typing speed to safety architecture.</li>
+<li><b>The maturation of solo micro-SaaS ecosystems:</b> Keep an eye on the quiet economy of single-developer businesses leveraging AI agents to ship production-grade products without traditional venture backing.</li>
+</ul>
+<p>AI will continue to write faster, but the core identity of an engineer remains unchanged. The goal is not to become a faster typist, but a better custodian of systems that must survive the real world.</p>
+</main>
+<footer class="foot"><a href="../index.html">← All posts</a> · <a href="../privacy.html">Privacy</a></footer>
+</body></html>
