@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://blacksnowmans.github.io/blacksnowman/sitemap.xml
