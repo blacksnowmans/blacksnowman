@@ -8,7 +8,7 @@
 <meta property="og:title" content="Nemotron 3.5 Lightning 로컬 LLM 실사용 성능 및 후기">
 <meta property="og:description" content="엔비디아가 새로 내놓은 로컬 LLM 모델인 Nemotron 3.5 Lightning 을 처음 마주했을 때, 가장 먼저 눈에 들어온 건 단연 &#x27;100만 토큰에 달하는 압도적인 컨텍스트 사이즈&#x27; 였다. Ollama의 최신 모델 목록에 추가된 이 오픈 모델은 30B 파라미터 규모의 MoE 구">
 <meta property="og:type" content="article">
-<meta property="og:image" content="https://res.cloudinary.com/fcs8sfgj/image/upload/v1790047370/ytblog/post947_1.png">
+<meta property="og:image" content="https://blacksnowmans.github.io/blacksnowman/img/post947_1.jpg">
 <link rel="stylesheet" href="../../style.css">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-4KSJTE78D4"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4KSJTE78D4');</script>
@@ -18,11 +18,11 @@
 <main class="post">
   <h1>Nemotron 3.5 Lightning 로컬 LLM 실사용 성능 및 후기</h1>
   <p class="meta"><time datetime="2026-09-22">2026년 09월 22일</time></p>
-  <p><img src="https://res.cloudinary.com/fcs8sfgj/image/upload/v1790047370/ytblog/post947_1.png" alt="Nemotron 3.5 Lightning 로컬 LLM 실사용 성능 및 후기"></p>
+  <p><img src="https://blacksnowmans.github.io/blacksnowman/img/post947_1.jpg" alt="Nemotron 3.5 Lightning 로컬 LLM 실사용 성능 및 후기"></p>
   
 엔비디아가 새로 내놓은 로컬 LLM 모델인 <b style="color:#1976d2;">Nemotron 3.5 Lightning</b>을 처음 마주했을 때, 가장 먼저 눈에 들어온 건 단연 <span style="background-color:#fff9c4;">'100만 토큰에 달하는 압도적인 컨텍스트 사이즈'</span>였다. Ollama의 최신 모델 목록에 추가된 이 오픈 모델은 30B 파라미터 규모의 MoE 구조를 지니면서도, 실제로는 3B의 액티브 파라미터만 써서 돌아간다는 점 때문에 로컬 유저들 사이에서 적잖은 기대를 모았다. "장시간 실행"과 "빠른 추론 속도"를 앞세운 이 모델을 두고 커뮤니티에서는 드디어 로컬 환경에서도 거대한 문서나 코드를 한 번에 밀어 넣고 돌릴 수 있는 마법의 탄생인 것처럼 이야기하기도 했다. 파라미터 사이즈도 이만하면 한번 직접 굴려볼 만하다는 생각이 들어, 곧바로 로컬 환경에 올려두고 여러 테스트를 진행해 보았다. 과연 스펙표에 적힌 거대한 숫자들이 실제 내 작업 환경에서도 유의미한 결과물로 이어질지, 직접 겪어본 과정을 가감 없이 풀어보려 한다. 📉
 
-<p style="text-align:center; margin:30px 0;"><img alt="본문 이미지 1" src="https://res.cloudinary.com/fcs8sfgj/image/upload/v1790047370/ytblog/post947_1.png" style="max-width:100%; height:auto; border-radius:8px;"/></p>
+<p style="text-align:center; margin:30px 0;"><img alt="본문 이미지 1" src="https://blacksnowmans.github.io/blacksnowman/img/post947_1.jpg" style="max-width:100%; height:auto; border-radius:8px;"/></p>
 <h2>NVIDIA Nemotron 3.5 Lightning 개요와 설치 환경</h2>
 <h3>Ollama와 LM Studio를 통한 모델 탐색 및 양자화 버전 선택</h3>
   
@@ -115,7 +115,7 @@
 <div style="text-align:center; margin-bottom:30px;"><a href="https://link.coupang.com/a/gBEzFJk4dM" referrerpolicy="unsafe-url" rel="nofollow noopener sponsored" target="_blank"><img alt="원더푸드 짜먹는 고양이 간식 60p, 혼합맛(연어/참치), 720g, 1세트" height="240" src="https://img5c.coupangcdn.com/image/affiliate/banner/d14d0149a10dedf700e7c63758aa9f6b@2x.jpg" style="border-radius:6px;" width="120"/></a><p style="margin:8px 0 0; font-size:12px; color:#999;">이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</p></div>
 새로운 모델이 등장할 때마다 마케팅 문구에 적힌 거대한 스펙과 폭발적인 토큰 처리량에 눈이 멀기 쉽다. 하지만 엔비디아의 최신작이 남긴 일련의 실험들은 우리에게 차가운 현실을 일깨워준다. 컨텍스트가 아무리 100만에 달하고 추론 속도가 눈부시게 빨라도, 실무의 복잡한 에러 앞에서 길을 잃거나 방대한 데이터를 대충 훑어보고 엉뚱한 결론을 내린다면 그 도구는 장난감 그 이상도 이하도 아니다. 결국 중요한 것은 숫자의 크기가 아니라, 주어진 자원 안에서 얼마나 정확하고 치밀하게 논리를 엮어내느냐의 문제다. 앞으로 로컬 AI 생태계가 마케팅의 허상에서 벗어나 진짜 일 잘하는 도구들을 가려내는 방향으로 성숙해지기를 바라본다.
 
-<p>#엔비디아 #Nemotron #로컬LLM #Ollama #LMStudio #인공지능 #AI모델 #Qwen #MuseGlimmer #빅데이터분석 #코딩에러 #디버깅 #머신러닝 #오픈소스AI #VRAM #텍스트생성 #데이터검증 #개발일지 #테스트후기 #AI에이전트 #LLM성능 #AI트렌드 #기술블로그 #프로그래밍 #파이썬 #데이터추출 #딥러닝 #소프트웨어개발 #에디터단상</p><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Nemotron 3.5 Lightning 로컬 LLM 실사용 성능 및 후기", "image": ["https://res.cloudinary.com/fcs8sfgj/image/upload/v1790047370/ytblog/post947_1.png"], "datePublished": "2026-09-22T12:19:39.939765+09:00", "dateModified": "2026-09-22T12:19:39.939765+09:00"}</script>
+<p>#엔비디아 #Nemotron #로컬LLM #Ollama #LMStudio #인공지능 #AI모델 #Qwen #MuseGlimmer #빅데이터분석 #코딩에러 #디버깅 #머신러닝 #오픈소스AI #VRAM #텍스트생성 #데이터검증 #개발일지 #테스트후기 #AI에이전트 #LLM성능 #AI트렌드 #기술블로그 #프로그래밍 #파이썬 #데이터추출 #딥러닝 #소프트웨어개발 #에디터단상</p><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Nemotron 3.5 Lightning 로컬 LLM 실사용 성능 및 후기", "image": ["https://blacksnowmans.github.io/blacksnowman/img/post947_1.jpg"], "datePublished": "2026-09-22T12:19:39.939765+09:00", "dateModified": "2026-09-22T12:19:39.939765+09:00"}</script>
 </main>
 <footer class="foot"><a href="../index.html">← 전체 글</a> · <a href="../privacy.html">Privacy</a></footer>
 </body></html>
